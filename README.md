@@ -1,45 +1,47 @@
-# DMS-dead-man-s-spirit-
-Dead Man's Spirit (dms)
+DMS
 
-Recover "ghost code" — code your AI coding agent claimed to write, but never actually landed in your workspace.
+markdown
+# Dead Man's Spirit (dms)
 
-https://img.shields.io/badge/License-MIT-yellow.svg
-https://img.shields.io/badge/python-3.x-blue.svg
-https://img.shields.io/badge/dependencies-none-brightgreen.svg
+> Recover "ghost code" — code your AI coding agent claimed to write, but never actually landed in your workspace.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#)
 
 ---
 
-The Problem
+## The Problem
 
 You ask Claude Code, Cursor, Aider, Cline, Codex, or Antigravity to write a file.
 
-The agent says: "Done! I've created src/auth.py."
+The agent says: *"Done! I've created `src/auth.py`."*
 
-You check. It's not there.
+You check. **It's not there.**
 
-Or worse — it's there, but it's the old version, and the agent's "successful edit" silently vanished into a sandbox, a git worktree, or a dangling blob. This is ghost code.
+Or worse — it's there, but it's the *old* version, and the agent's "successful edit" silently vanished into a sandbox, a git worktree, or a dangling blob. This is **ghost code**.
 
-dms reads your agent's session history, finds every file write it claimed to perform, and checks whether each one actually landed on disk. Then it helps you get the lost ones back.
-
----
-
-Features
-
-· 🔍 Agent-agnostic — built-in profiles for Claude Code, Antigravity (agy), Aider, Cursor CLI, Cline, and Codex CLI
-· 🧩 Extensible — point it at any agent's history dir with a JSON profile; no code changes needed
-· 🪦 Grave search — hunts for lost code in git worktrees, sandboxes, scope-drifted project dirs, editor swap files, dangling git blobs, and the raw transcript payload itself
-· ⚰️ --exhume — one command to restore ghost files back into your workspace
-· 👁️ --watch — live monitor; alerts you the moment a claimed write doesn't land
-· 📦 Zero dependencies — pure Python 3 stdlib. Runs on macOS, Linux, and Termux.
+`dms` reads your agent's session history, finds every file write it *claimed* to perform, and checks whether each one actually landed on disk. Then it helps you get the lost ones back.
 
 ---
 
-Install
+## Features
 
-Termux / Linux / macOS
+- 🔍 **Agent-agnostic** — built-in profiles for Claude Code, Antigravity (`agy`), Aider, Cursor CLI, Cline, and Codex CLI
+- 🧩 **Extensible** — point it at any agent's history dir with a JSON profile; no code changes needed
+- 🪦 **Grave search** — hunts for lost code in git worktrees, sandboxes, scope-drifted project dirs, editor swap files, dangling git blobs, and the raw transcript payload itself
+- ⚰️ **`--exhume`** — one command to restore ghost files back into your workspace
+- 👁️ **`--watch`** — live monitor; alerts you the moment a claimed write doesn't land
+- 📦 **Zero dependencies** — pure Python 3 stdlib. Runs on macOS, Linux, and Termux.
+
+---
+
+## Quick Install
+
+**Termux / Linux / macOS** — requires only Python 3:
 
 ```bash
-curl -O https://raw.githubusercontent.com/YOURNAME/dms/main/dms.py
+curl -O https://raw.githubusercontent.com/panduvv2527-commits/DMS-dead-man-s-spirit-/main/dms.py
 chmod +x dms.py
 ./dms.py --list-agents
 ```
@@ -47,8 +49,8 @@ chmod +x dms.py
 Or clone:
 
 ```bash
-git clone https://github.com/YOURNAME/dms.git
-cd dms
+git clone https://github.com/panduvv2527-commits/DMS-dead-man-s-spirit-.git
+cd DMS-dead-man-s-spirit-
 ./dms.py
 ```
 
@@ -95,7 +97,7 @@ How It Works
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │  Agent session  │───▶│  Extract claimed │───▶│  Reconcile vs.  │
 │  history        │    │  file writes     │    │  real filesystem│
-│  (JSONL / SQLite)│   │  (tool calls)    │    │                 │
+│  (JSONL/SQLite) │    │  (tool calls)    │    │                 │
 └─────────────────┘    └──────────────────┘    └────────┬────────┘
                                                         │
                         ┌───────────────────────────────┘
@@ -199,7 +201,7 @@ termux-setup-storage   # if your workspace is on /sdcard
 
 ---
 
-Exit / Output Examples
+Example Output
 
 ```
 =================================================================================
@@ -229,7 +231,7 @@ Roadmap
 ☐ Auto-hook — intercept writes and verify in real time
 ☐ More built-in profiles (Windsurf, Continue, Zed AI, OpenHands)
 
-PRs welcome — especially new agent profiles. See CONTRIBUTING.md.
+PRs welcome — especially new agent profiles.
 
 ---
 
@@ -246,6 +248,5 @@ dms reads local agent history files. It does not transmit anything anywhere. --e
 ---
 
 If this saved a file your agent swore it wrote, ⭐ the repo.
-</｜｜DSML｜｜ parameter>
-</｜｜DSML｜｜ invoke>
-</｜｜DSML｜｜ calls>
+
+```
